@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using Xamarin.Forms;
 
 namespace NetStatus
@@ -20,6 +22,8 @@ namespace NetStatus
 
         protected override void OnStart()
         {
+            AppCenter.Start("android=b27810bc-a8da-487a-85eb-b0bbc61425fc;",
+                   typeof(Analytics), typeof(Crashes));
         }
         protected override void OnSleep ()
 		{
